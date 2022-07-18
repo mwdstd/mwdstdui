@@ -1,0 +1,300 @@
+/* body, .input, .button {
+    font: normal 16px Verdana;
+    margin: 0;
+} */
+
+@media only screen and (min-width : 993px) {
+    .container {
+      width: unset;
+    }
+  }
+
+body {
+    overflow-y: scroll;
+}
+
+a[disabled] {
+    color: gray;
+}
+
+.btn.right.input-field {
+    margin-left: 10px;
+}
+.btn.left.input-field {
+    margin-right: 10px;
+}
+
+ul.stepper .step .step-content .row.no-margin,
+.row.no-margin > .input-field {
+    margin-bottom: 0px;
+}
+
+.inline-input {
+    padding: 0px;
+    margin: 0px;
+}
+
+.inline-input input[type="text"],
+.inline-input input[type="number"] {
+    height: auto;
+    line-height: normal;
+}
+
+.inline-input .select-wrapper svg {
+    margin: 0px;
+}
+
+.modal.bottom-sheet {
+    /* height: auto; */
+    max-height: 100%;
+}
+
+.modal.bottom-sheet {
+    /* height: auto; */
+    max-height: 100%;
+}
+
+.modal-content .col.s12 {
+    left: 0px;
+    right: 0px;
+}
+
+.layout {
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.breadcrumb:first-child {
+    padding-left: 10px;
+}
+
+.breadcrumb.light-blue-text.darken-1:last-child, .breadcrumb.light-blue-text.darken-1:before{
+    color: #000 !important;
+}
+
+nav .brand-logo {
+    padding-left: 10px;
+}
+
+.bcr {
+    float: right;
+    position: relative;
+    top: -54px;
+    margin-bottom: -54px;
+}
+
+.imode {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.bcr > .imode {
+    float: left;
+    margin-right: 10px;
+}
+.bcr > .btn { 
+    margin-top: 4px;
+}
+
+
+.card-content table tr th, .card-content table tr td {
+    display: block;
+    padding: 0px;
+}
+
+.z-depth-0 .card-content table tr th, .z-depth-0 .card-content table tr td {
+    display: table-cell;
+}
+
+.collection .collection-item.avatar i.circle {
+    font-size: 32px;
+}
+
+.fill {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fill-content {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.fill .row, .fill .row .col {
+    margin-left: unset;
+    margin-right: unset;
+}
+
+.form-scroll {
+    overflow: auto;
+}
+
+.form-scroll table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+.form-scroll table thead {
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+.form-scroll table tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+.form-scroll table tbody tr {
+    width: 100%;
+}
+.form-scroll table thead, .form-scroll table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+.login {
+    width: 350px;
+    padding: 20px;
+    /* border: 3px solid #000;
+    border-radius: 10px; */
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+.login h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: x-large;
+    margin-top: 0px;
+}
+.login h2 {
+    font-size: large;
+    margin-top: 0px;
+}
+
+td div .options {
+    display: none;
+}
+
+tr td {
+    padding: 0px 5px;
+}
+
+@media only screen and (max-width : 992px) {
+    table.responsive-table tr th {
+        padding: 0px 5px;
+    }
+}
+
+.btn-tg {
+    text-decoration: none;
+    /* color: #fff; */
+    /* background-color: #2196F3; */
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+}
+.btn-tg {
+    font-size: 14px;
+    outline: 0;
+}
+.btn-tg {
+    /* border: none; */
+    /* border-radius: 2px; */
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    /* padding: 0 16px; */
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-tg {
+    /* box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2); */
+    border: 1px solid #9e9e9e;
+    border-right: none;
+    margin: -1px;    
+    margin-top: 6px;
+    margin-bottom: 27px;
+}
+
+.btn-tg.col {
+    padding: unset;
+}
+
+.btn-tg:nth-child(2) {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.btn-tg:last-child {
+    border-right: 1px solid #9e9e9e;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn-tg > label, .input-field.col .btn-tg > label {
+    color: unset;
+    cursor: pointer;
+}
+
+.btn-tg > label > [type="radio"] + span {
+    line-height: unset;
+    padding-left: unset;
+    height: unset;
+    display: block;
+}
+
+.btn-tg > label > [type="radio"] + span::after,
+.btn-tg > label > [type="radio"] + span::before {
+    content: unset;
+}
+
+.btn-tg > label > [type="radio"]:checked + span {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-tg > label > [type="radio"]:checked:disabled + span {
+    background: rgba(0, 0, 0, 0.42);;
+    color: white;
+}
+
+.col > .col:first-child {
+    padding: unset;
+}
+
+.fixed-checkbox {
+    width: 180px
+}
+
+.fixed-checkbox > .input-field.options,
+.fixed-checkbox > .btn-tg {
+    margin-top: unset;
+    margin-bottom: unset
+}
+
+.strip-input {
+    margin: 0px;
+}
+
+.strip-input > input[type="number"]:not(.browser-default),
+.strip-input > input[type="number"]:not(.browser-default):valid {
+    border-bottom: unset;
+    height: unset;
+    margin: unset;
+    text-align: right;
+}
+/* .col .input-field.col:first-child label {
+    left: unset;
+} */
+
+/*Fix of file input grows on file select*/
+.file-field > a {
+    margin-bottom: -3rem;
+}
