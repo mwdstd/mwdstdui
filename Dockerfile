@@ -6,7 +6,7 @@ ENV PORT=3000
 WORKDIR /code
 COPY package.json package-lock.json mithril-materialized-custom.tgz /code/
 RUN npm ci
-COPY index.html webpack.prod.js tsconfig.json .babelrc /code/
+COPY index.html webpack.prod.js tsconfig.json .babelrc version.ejs /code/
 COPY src /code/src
 
 CMD [ "npm", "start" ]
