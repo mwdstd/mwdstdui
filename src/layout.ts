@@ -4,6 +4,7 @@ import { DialogService}  from './dialog'
 import { spinner } from './views/common'
 import { Auth } from './auth'
 import { NavDropdown } from './components/navdropdown'
+import { AboutModal } from './about'
 
 
 interface IMenuOptions {
@@ -23,6 +24,7 @@ export const Layout = {
                         m('ul.right',
                             control ? m('li', m(m.route.Link, {href: '/control'}, 'Dashboard')) : '',
                             debug ? m('li', m(m.route.Link, {href: '/debug'}, 'Debug')) : '',
+                            m('li', m('a.modal-trigger', {href: '#aboutModal'}, m('i.material-icons', 'help'))),
                             m('li', m(NavDropdown, {
                                 iconName: 'account_circle',
                                 label: 'User',
@@ -36,6 +38,7 @@ export const Layout = {
                     ),
                 ),
                 m("main", vnode.children),
+                m(AboutModal),
                 m(ModalPanel, {
                     id: 'mainErrorModal',
                     title: 'Error occurred',
