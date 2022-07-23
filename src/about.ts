@@ -1,12 +1,17 @@
 import m from 'mithril'
 import { FlatButton, ModalPanel } from 'mithril-materialized'
+import { Model } from './models';
 import * as appVersionJson from './version.json';
 
-export const appVersion: AppVersion = <any>appVersionJson;
-
-export interface AppVersion {
+export interface AppInfo {
     /** application name as specified in package.json */
     readonly name: string;
+
+    /** application description as specified in package.json */
+    readonly description: string;
+
+    /** application homepage as specified in package.json */
+    readonly homepage: string;
 
     /** build timestamp in milliseconds since the epoch */
     readonly buildDate: number;
@@ -14,12 +19,12 @@ export interface AppVersion {
     /** application version as specified in package.json */
     readonly version: string;
 }
-const components = [
-    {name: appVersion.name, version: appVersion.version, description: 'Web frontend', src: 'https://github.com/mwdstd/mwdstdui'},
-    {name: 'mwdstdb', version: '0.5.0', description: 'Data storage and automation backend', src: 'https://github.com/mwdstd/mwdstdb'},
-    {name: 'mwdstcore', version: '0.5.0', description: 'Calculation server', src: 'https://github.com/mwdstd/mwdstdcore'},
-    {name: 'mwdstdwits', version: '0.5.0', description: 'WITS Service', src: 'https://github.com/mwdstd/mwdstdwits'},
-]
+
+export const appVersion= <AppInfo>appVersionJson;
+
+const versionsModel = new Model('versions');
+versionsModel.loadList().then(l => components = [...components, ...<AppInfo[]>l])
+var components : AppInfo[] = [appVersion]
 
 export const AboutModal = {
     view: () =>  m(ModalPanel, {
@@ -42,7 +47,7 @@ export const AboutModal = {
                 ),
                 components.map(c => 
                     m('tr', 
-                        m('td', m('a', {href: c.src, target: '_blank'}, c.name)),
+                        m('td', m('a', {href: c.homepage, target: '_blank'}, c.name)),
                         m('td', c.version),
                         m('td', c.description),
                     )
