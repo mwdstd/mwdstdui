@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackVersionFilePlugin = require('webpack-version-file-plugin');
 
 module.exports = {
   mode: 'development',
@@ -42,6 +43,14 @@ module.exports = {
     minimize: false
   },
   plugins: [
-	 new MiniCssExtractPlugin({filename: "style.css"})
+	 new MiniCssExtractPlugin({filename: "style.css"}),
+   new WebpackVersionFilePlugin({
+      packageFile: path.join(__dirname, 'package.json'),
+      template: path.join(__dirname, 'version.ejs'),
+      outputFile: path.join('src/', 'version.json'),
+      extras: {
+        'timestamp': Date.now(),
+      }
+    })
   ]
 };

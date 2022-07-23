@@ -1,8 +1,21 @@
 import m from 'mithril'
 import { FlatButton, ModalPanel } from 'mithril-materialized'
+import * as appVersionJson from './version.json';
 
+export const appVersion: AppVersion = <any>appVersionJson;
+
+export interface AppVersion {
+    /** application name as specified in package.json */
+    readonly name: string;
+
+    /** build timestamp in milliseconds since the epoch */
+    readonly buildDate: number;
+
+    /** application version as specified in package.json */
+    readonly version: string;
+}
 const components = [
-    {name: 'mwdstdui', version: '0.5.0', description: 'Web frontend', src: 'https://github.com/mwdstd/mwdstdui'},
+    {name: appVersion.name, version: appVersion.version, description: 'Web frontend', src: 'https://github.com/mwdstd/mwdstdui'},
     {name: 'mwdstdb', version: '0.5.0', description: 'Data storage and automation backend', src: 'https://github.com/mwdstd/mwdstdb'},
     {name: 'mwdstcore', version: '0.5.0', description: 'Calculation server', src: 'https://github.com/mwdstd/mwdstdcore'},
     {name: 'mwdstdwits', version: '0.5.0', description: 'WITS Service', src: 'https://github.com/mwdstd/mwdstdwits'},
