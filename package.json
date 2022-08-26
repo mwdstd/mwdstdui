@@ -1,6 +1,6 @@
 {
   "name": "mwdstdui",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "MWD STD Basic web frontend",
   "main": "index.js",
   "homepage": "https://github.com/mwdstd/mwdstdui",

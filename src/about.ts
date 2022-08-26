@@ -26,6 +26,16 @@ const versionsModel = new Model('versions');
 versionsModel.loadList().then(l => components = [...components, ...<AppInfo[]>l])
 var components : AppInfo[] = [appVersion]
 
+const refBtn = (label: string, url: string) =>
+    m('.col.m4.s12.center-align', m(FlatButton, {
+        label, 
+        href: url,
+        style: 'text-align: center;', 
+        iconClass: 'right', 
+        iconName: 'launch', 
+        target: '_blank', 
+    }))
+
 export const AboutModal = {
     view: () =>  m(ModalPanel, {
         id: 'aboutModal',
@@ -34,9 +44,9 @@ export const AboutModal = {
             m('', 'The automatic platform for basic measurement-while-drilling corrections'),
             m('hr'),
             m('.row',
-                m(FlatButton, {style: 'text-align: center;', className: 'col m4 s12', label: 'Features', target: '_blank', href: 'https://mwdstd.com/mwd-std-basic/'}),
-                m(FlatButton, {style: 'text-align: center;', className: 'col m4 s12', label: 'Installation', target: '_blank', href: 'https://github.com/mwdstd/mwdstdbasic/blob/master/INSTALL.md'}),
-                m(FlatButton, {style: 'text-align: center;', className: 'col m4 s12', label: 'User manual', target: '_blank', href: 'https://mwdstd.com/content/'}),
+                refBtn('Features', 'https://mwdstd.com/mwd-std-basic/'),
+                refBtn('Installation', 'https://github.com/mwdstd/mwdstdbasic/blob/master/INSTALL.md'),
+                refBtn('User manual', 'https://mwdstd.com/content/'),
             ),
             m('h6', 'Components'),
             m('table',
@@ -47,7 +57,7 @@ export const AboutModal = {
                 ),
                 components.map(c => 
                     m('tr', 
-                        m('td', m('a', {href: c.homepage, target: '_blank'}, c.name)),
+                        m('td', m('a', {href: c.homepage, target: '_blank'}, c.name, m('i.material-icons.tiny', 'launch'))),
                         m('td', c.version),
                         m('td', c.description),
                     )

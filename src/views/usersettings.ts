@@ -72,7 +72,7 @@ export const UserSettings = {
                                                     field: 'tooltype',
                                                     values: {
                                                         standard: 'Standard', standardigxy: 'Standard (Inverted Gx & Gy)', 
-                                                        schlumberger: 'Schlumberger', halliburton: 'Halliburton'},
+                                                        schlumberger: 'Schlumberger', halliburton: 'Halliburton', tensor: 'Tensor'},
                                                     onchange: () => model.setToolType()
                                                 }),
                                                 m(descriptionSelector, m('table', 

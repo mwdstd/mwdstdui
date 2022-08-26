@@ -63,6 +63,14 @@ const toolMap: {[k: string]: {
         maxes: ['X', 'Y', 'Z'],
         gaxesi: [false, false, false],
         maxesi: [false, false, false]
+    },
+    tensor: {
+        acceleration: 'gn',
+        magind: 'gauss',
+        gaxes: ['X', 'Y', 'Z'],
+        maxes: ['X', 'Y', 'Z'],
+        gaxesi: [false, false, false],
+        maxesi: [false, false, false]
     }
 }
 
@@ -83,7 +91,7 @@ export class UserSettingsVm extends BaseVm {
         await super.initialize()
         this.ustype = this.user.us.length == 'ft' ? 'imperial' : 'metric'
         this.tooltype = this.user.us.acceleration == 'gn' ? 
-            'halliburton' :
+            this.user.us.magind == 'gauss' ? 'tensor' : 'halliburton' :
             this.user.us.acceleration == 'mgn' ?
                 'schlumberger' :
                 this.user.us.gaxesi[0] ? 
