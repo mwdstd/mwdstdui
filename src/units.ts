@@ -11,6 +11,7 @@ const unames = {
     'm/s^2': 'm/s²',
     'gn': 'gₙ',
     'mgn': 'mgₙ',
+    'gauss': 'G',
     'degC': '°C',
     'degF': '°F',
     'percent': '%',
@@ -33,7 +34,8 @@ const formats = {
     'lb': frac0,
     'kg': frac0,
     'ppm': frac0,
-    'fraction': frac4
+    'fraction': frac4,
+    'gauss': frac4
 }
 
 // unit display name

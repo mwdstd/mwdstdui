@@ -1,4 +1,3 @@
-import { thomsonCrossSectionDependencies } from 'mathjs'
 import m from 'mithril'
 import { DialogService } from "../dialog"
 import { UserModel } from "../models"
@@ -12,7 +11,8 @@ const usMap = {
         density: 'g/ml',
         mass: 'kg',
         temperature: 'degC',
-        dls_interval: 30
+        dls_interval: 30,
+        ratio_fine: 'ppm'
     },
     imperial: {
         length: 'ft',
@@ -20,7 +20,8 @@ const usMap = {
         density: 'lb/gal',
         mass: 'lb',
         temperature: 'degF',
-        dls_interval: 100
+        dls_interval: 100,
+        ratio_fine: 'ppm'
     }
 }
 
